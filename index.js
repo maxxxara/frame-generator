@@ -8,13 +8,14 @@ const fs = require("fs");
 // app.use(cors());
 app.use("/test", async function (req, res) {
   const { frame, variant, bg } = req.query;
-  const image = await nodeHtmlToImage({
-    html: fs.readFileSync(`frames/${frame}/${variant}.html`, "utf8"),
-    selector: "#container",
-    content: { bg },
-    type: "webp",
-  });
-  res.status(200).contentType("image/webp").send(image);
+  // const image = await nodeHtmlToImage({
+  //   html: fs.readFileSync(`frames/${frame}/${variant}.html`, "utf8"),
+  //   selector: "#container",
+  //   content: { bg },
+  //   type: "webp",
+  // });
+  // res.status(200).contentType("image/webp").send(image);
+  res.send("ok");
 });
 
 app.use("/", async function (req, res) {
