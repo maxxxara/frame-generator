@@ -1,10 +1,11 @@
 const express = require("express");
 const app = express();
 const port = 3001;
+const cors = require("cors");
+
 const nodeHtmlToImage = require("node-html-to-image");
-
 const fs = require("fs");
-
+app.use(cors());
 app.use("/", async function (req, res) {
   const { frame, variant, bg } = req.query;
   console.log(`./frames/${frame}/${variant}.html`);
@@ -12,8 +13,9 @@ app.use("/", async function (req, res) {
     html: fs.readFileSync(`./frames/${frame}/${variant}.html`, "utf8"),
     selector: "#container",
     content: { bg },
+    type: "webp",
   });
-  res.status(200).contentType("image/png").send(image);
+  res.status(200).contentType("image/webp").send(image);
 });
 
 app.listen(port, () => {
