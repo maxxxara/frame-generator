@@ -1,6 +1,8 @@
 const express = require("express");
 const app = express();
 const port = 400;
+import path from "path";
+
 // const cors = require("cors");
 
 const nodeHtmlToImage = require("node-html-to-image");
