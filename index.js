@@ -8,9 +8,8 @@ const fs = require("fs");
 // app.use(cors());
 app.use("/test", async function (req, res) {
   const { frame, variant, bg } = req.query;
-  console.log(`frames/${frame}/${variant}.html`);
   const image = await nodeHtmlToImage({
-    html: fs.readFileSync(`./frames/${frame}/${variant}.html`, "utf8"),
+    html: fs.readFileSync(`frames/${frame}/${variant}.html`, "utf8"),
     selector: "#container",
     content: { bg },
     type: "webp",
