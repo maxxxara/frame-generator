@@ -18,6 +18,10 @@ app.use("/", async function (req, res) {
   res.status(200).contentType("image/webp").send(image);
 });
 
+app.use("/test", async function (req, res) {
+  res.status(200).send("test 200");
+});
+
 app.listen(port, () => {
   console.log(`Port: ${port}`);
 });
