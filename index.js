@@ -3,7 +3,7 @@ const app = express();
 const port = 400;
 // const cors = require("cors");
 
-// const nodeHtmlToImage = require("node-html-to-image");
+const nodeHtmlToImage = require("node-html-to-image");
 // const fs = require("fs");
 // app.use(cors());
 // app.use("/", async function (req, res) {
