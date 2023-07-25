@@ -13,14 +13,13 @@ app.use("/test", async function (req, res) {
   const file = path.join(process.cwd(), "frames/1", "1.html");
   let t = fs.readFileSync(file, "utf8");
   console.log("filee123", t);
-  // const image = await nodeHtmlToImage({
-  //   html: fs.readFileSync(`frames/${frame}/${variant}.html`, "utf8"),
-  //   selector: "#container",
-  //   content: { bg },
-  //   type: "webp",
-  // });
-  // res.status(200).contentType("image/webp").send(image);
-  res.send("ok");
+  const image = await nodeHtmlToImage({
+    html: file,
+    selector: "#container",
+    content: { bg },
+    type: "webp",
+  });
+  res.status(200).contentType("image/webp").send(image);
 });
 
 app.use("/", async function (req, res) {
