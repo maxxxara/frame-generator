@@ -8,7 +8,7 @@ const fs = require("fs");
 // app.use(cors());
 app.use("/test", async function (req, res) {
   const { frame, variant, bg } = req.query;
-  let t = fs.readFileSync(process.cwd(), `frames/1/1.html`, "utf8");
+  let t = fs.readFileSync(process.cwd(), `/frames/1/1.html`, "utf8");
   console.log("filee123", t);
   // const image = await nodeHtmlToImage({
   //   html: fs.readFileSync(`frames/${frame}/${variant}.html`, "utf8"),
